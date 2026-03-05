@@ -32,15 +32,12 @@ in
   programs.git = {
     enable = true;
     settings = {
-      user =
-        {
-          userName = "sanghyeon";
-          userEmail = "boh001g@gmail.com";
-        };
-      extraConfig = {
-        credential.helper = "store";
-        push = { autoSetupRemote = true; };
+      user = {
+        name = "sanghyeon";
+        email = "sanghyeon.dev@proton.me";
       };
+      credential.helper = "store";
+      push = { autoSetupRemote = true; };
     };
   };
 
