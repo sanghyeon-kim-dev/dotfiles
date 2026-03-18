@@ -1,8 +1,5 @@
 return {
   "natecraddock/workspaces.nvim",
-  dependencies = {
-    "nvim-telescope/telescope.nvim",
-  },
   config = function()
     require("workspaces").setup({
       workspaces = {
@@ -17,7 +14,9 @@ return {
       },
       sort = false,
       hooks = {
-        open = { "Telescope find_files hidden=true" },
+        open = function()
+          Snacks.picker.files({ hidden = true })
+        end,
       },
     })
     vim.api.nvim_create_autocmd("VimEnter", {

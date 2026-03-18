@@ -103,9 +103,10 @@
               "sdkman-cli"
               "bat"
               "zoxide"
-              "fzf"
+              "ripgrep"
               "uv"
               "yazi"
+              "imagemagick"
             ];
 
             casks = [
