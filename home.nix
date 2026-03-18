@@ -20,6 +20,11 @@ in
     force = true;
   };
 
+  xdg.configFile."nvim" = {
+    source = create_symlink "${dotfiles}/nvim";
+    force = true;
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
