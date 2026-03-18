@@ -9,7 +9,7 @@ return {
     { "<C-b>", function() Snacks.picker.buffers() end },
     { "<C-f-h>", function() Snacks.picker.help() end },
     { "gr", function() Snacks.picker.lsp_references() end },
-    { "<C-y>", function() Snacks.picker.pick("yank_history") end },
+    { "<C-y>", function() Snacks.picker.yank_history() end },
     { "<C-o>", function()
       local items = {}
       for _, ws in ipairs(require("workspaces").get()) do

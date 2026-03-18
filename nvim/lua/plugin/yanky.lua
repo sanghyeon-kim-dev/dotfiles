@@ -1,7 +1,15 @@
 return {
   "gbprod/yanky.nvim",
-  event = "VeryLazy",
-  config = function()
-    require("yanky").setup({})
-  end,
+  opts = {},
+  dependencies = { "folke/snacks.nvim" },
+  keys = {
+    {
+      "<C-y>",
+      function()
+        Snacks.picker.yanky()
+      end,
+      mode = { "n", "x" },
+      desc = "Open Yank History",
+    },
+  },
 }
