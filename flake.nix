@@ -24,10 +24,6 @@
       url = "github:sdkman/homebrew-tap";
       flake = false;
     };
-    homebrew-beads = {
-      url = "github:steveyegge/homebrew-beads";
-      flake = false;
-    };
   };
 
   outputs =
@@ -39,7 +35,6 @@
     , homebrew-core
     , homebrew-cask
     , homebrew-sdkman
-    , homebrew-beads
     }:
     let
       configuration =
@@ -87,7 +82,6 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "sdkman/homebrew-tap" = homebrew-sdkman;
-              "steveyegge/homebrew-beads" = homebrew-beads;
             };
 
             mutableTaps = false;
@@ -102,19 +96,19 @@
             };
             taps = builtins.attrNames config.nix-homebrew.taps;
             brews = [
+              "neovim"
               "mas"
               "fnm"
               "rbenv"
               "sdkman-cli"
-              "fastfetch"
               "bat"
               "zoxide"
               "fzf"
               "uv"
-              "ccusage"
             ];
 
             casks = [
+              "ghostty"
               "font-jetbrains-mono-nerd-font"
               "google-chrome"
               "visual-studio-code"
@@ -122,7 +116,6 @@
               "aldente"
               "claude"
               "claude-code"
-              "ngrok"
               "karabiner-elements"
               "docker-desktop"
               "logi-options+"
