@@ -21,14 +21,6 @@ return {
           "^.git/",
           "^.zsh_sessions/",
         },
-        mappings = {
-          n = {
-            ["<c-d>"] = require("telescope.actions").delete_buffer,
-          },
-          i = {
-            ["<c-d>"] = require("telescope.actions").delete_buffer,
-          },
-        },
         find_command = { "fd", "-t=f", "-a" },
         path_display = { "absolute" },
         wrap_results = true,

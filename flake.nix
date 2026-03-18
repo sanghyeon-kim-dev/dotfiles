@@ -105,6 +105,7 @@
               "zoxide"
               "fzf"
               "uv"
+              "yazi"
             ];
 
             casks = [

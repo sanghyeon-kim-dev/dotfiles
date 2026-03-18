@@ -40,7 +40,7 @@ return {
     )
     vim.keymap.set(
       "n",
-      "<leader>gg",
+      "<leader>lg",
       "<cmd>lua _lazygit_toggle()<CR>",
       { noremap = true, silent = true }
     )

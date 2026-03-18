@@ -20,8 +20,18 @@ in
     force = true;
   };
 
+  xdg.configFile."ghostty" = {
+    source = create_symlink "${dotfiles}/ghostty";
+    force = true;
+  };
+
   xdg.configFile."nvim" = {
     source = create_symlink "${dotfiles}/nvim";
+    force = true;
+  };
+
+  xdg.configFile."yazi" = {
+    source = create_symlink "${dotfiles}/yazi";
     force = true;
   };
 
@@ -59,14 +69,5 @@ in
     extraConfig = ''
       set clipboard=unnamedplus
     '';
-  };
-
-  programs.yazi = {
-    enable = true;
-    settings = {
-      mgr = {
-        show_hidden = true;
-      };
-    };
   };
 }
