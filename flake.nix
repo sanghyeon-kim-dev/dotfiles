@@ -106,6 +106,8 @@
               "ripgrep"
               "uv"
               "yazi"
+              "lazygit"
+              "git-delta"
               "imagemagick"
             ];
 

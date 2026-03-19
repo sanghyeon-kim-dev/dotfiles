@@ -13,6 +13,14 @@ in
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
     nixpkgs-fmt
+    # LSP servers
+    lua-language-server
+    typescript-language-server
+    vscode-langservers-extracted # html, css, json, eslint
+    tailwindcss-language-server
+    # Formatters
+    stylua
+    prettierd
   ];
 
   xdg.configFile."karabiner/karabiner.json" = {
@@ -53,6 +61,13 @@ in
       };
       credential.helper = "store";
       push = { autoSetupRemote = true; };
+      core.pager = "delta";
+      interactive.diffFilter = "delta --color-only";
+      delta = {
+        navigate = true;
+        side-by-side = true;
+      };
+      merge.conflictstyle = "zdiff3";
     };
   };
 
