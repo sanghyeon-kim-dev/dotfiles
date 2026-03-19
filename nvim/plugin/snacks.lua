@@ -1,6 +1,9 @@
 vim.pack.add({ "https://github.com/folke/snacks.nvim" })
 
 require("snacks").setup({
+  input = { enabled = true },
+  indent = { enabled = true },
+  explorer = { enabled = true },
   image = {
     enabled = true,
     doc = {
@@ -72,6 +75,9 @@ end)
 vim.keymap.set({ "n", "x" }, "<C-y>", function()
   Snacks.picker.yanky()
 end, { desc = "Open Yank History" })
+vim.keymap.set("n", "<C-t>", function()
+  Snacks.explorer()
+end, { desc = "Toggle explorer" })
 vim.keymap.set("n", "<C-o>", function()
   local items = {}
   for _, ws in ipairs(require("workspaces").get()) do
