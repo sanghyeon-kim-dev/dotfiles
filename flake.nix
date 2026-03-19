@@ -104,6 +104,7 @@
               "bat"
               "zoxide"
               "ripgrep"
+              "fd"
               "uv"
               "yazi"
 
