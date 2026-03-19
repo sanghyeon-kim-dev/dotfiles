@@ -96,7 +96,7 @@
             };
             taps = builtins.attrNames config.nix-homebrew.taps;
             brews = [
-              "neovim"
+              "bob"
               "mas"
               "fnm"
               "rbenv"

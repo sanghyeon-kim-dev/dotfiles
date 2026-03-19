@@ -1,3 +1,6 @@
+vim.g.mapleader = ","
+vim.g.localleader = "\\"
+
 local options = {
   number = true,
   clipboard = "unnamed",
