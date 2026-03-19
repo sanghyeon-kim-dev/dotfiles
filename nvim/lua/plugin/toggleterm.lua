@@ -17,9 +17,14 @@ return {
 
     local Terminal = require("toggleterm.terminal").Terminal
     local claude = Terminal:new({ cmd = "claude", hidden = true, count = 6 })
+    local serie = Terminal:new({ cmd = "serie", hidden = true, count = 7 })
 
     function _claude_toggle()
       claude:toggle()
+    end
+
+    function _serie_toggle()
+      serie:toggle()
     end
 
     vim.keymap.set("n", "<leader>1", ":1ToggleTerm<CR>", { noremap = true, silent = true })
@@ -31,6 +36,12 @@ return {
       "n",
       "<leader>cc",
       "<cmd>lua _claude_toggle()<CR>",
+      { noremap = true, silent = true }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>sr",
+      "<cmd>lua _serie_toggle()<CR>",
       { noremap = true, silent = true }
     )
   end,

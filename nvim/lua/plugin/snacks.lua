@@ -10,7 +10,7 @@ return {
     { "<C-f-h>", function() Snacks.picker.help() end },
     { "gr", function() Snacks.picker.lsp_references() end },
     { "<C-y>", function() Snacks.picker.yank_history() end },
-    { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
+
     { "<C-o>", function()
       local items = {}
       for _, ws in ipairs(require("workspaces").get()) do
@@ -33,20 +33,7 @@ return {
   },
   ---@type snacks.Config
   opts = {
-    lazygit = {
-      enabled = true,
-      configure = true,
-      config = {
-        os = { editPreset = "nvim-remote" },
-        gui = { nerdFontsVersion = "3" },
-        git = {
-          paging = {
-            colorArg = "always",
-            pager = "delta --paging=never",
-          },
-        },
-      },
-    },
+
     image = {
       enabled = true,
       doc = {
