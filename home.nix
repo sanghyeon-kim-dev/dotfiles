@@ -18,6 +18,7 @@ in
     typescript-language-server
     vscode-langservers-extracted # html, css, json, eslint
     tailwindcss-language-server
+    biome
     # Formatters
     stylua
     prettierd
