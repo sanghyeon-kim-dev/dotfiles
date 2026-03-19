@@ -15,6 +15,7 @@ require("snacks").setup({
     sources = {
       files = {
         hidden = true,
+        matcher = { fuzzy = false },
       },
     },
   },
@@ -36,7 +37,15 @@ require("snacks").setup({
     },
     sections = {
       { section = "header" },
-      { section = "startup" },
+      {
+        text = (function()
+          local n = #vim.pack.get()
+          local dt = (vim.uv.hrtime() - vim.g._startuptime) / 1e6
+          local ms = math.floor(dt * 100 + 0.5) / 100
+          return "⚡ Loaded " .. n .. " plugins in " .. ms .. "ms"
+        end)(),
+        align = "center",
+      },
     },
   },
 })
