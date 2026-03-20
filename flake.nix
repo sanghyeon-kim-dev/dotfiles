@@ -108,6 +108,7 @@
               "uv"
               "yazi"
 
+              "tmux"
               "git-delta"
               "imagemagick"
             ];

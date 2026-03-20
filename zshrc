@@ -12,6 +12,24 @@ alias z=zoxide
 alias f=fzf
 alias c=claude --dangerously-skip-permissions
 
+# tmux coding cockpit: nvim (top-left), claude (top-right), terminal (bottom)
+nic() {
+  local session="${1:-$(basename "$PWD")}"
+  if tmux has-session -t "$session" 2>/dev/null; then
+    tmux attach -t "$session"
+    return
+  fi
+  tmux new-session -d -s "$session" -x "$(tput cols)" -y "$(tput lines)"
+  tmux split-window -h -t "$session"
+  tmux split-window -v -f -t "$session"
+  tmux resize-pane -t "$session:1.1" -x 85%
+  tmux resize-pane -t "$session:1.3" -y 10%
+  tmux send-keys -t "$session:1.1" 'nvim .' Enter
+  tmux send-keys -t "$session:1.2" 'claude' Enter
+  tmux select-pane -t "$session:1.3"
+  tmux attach -t "$session"
+}
+
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
 

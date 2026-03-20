@@ -45,6 +45,11 @@ in
     force = true;
   };
 
+  xdg.configFile."tmux/tmux.conf" = {
+    source = create_symlink "${dotfiles}/tmux.conf";
+    force = true;
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
