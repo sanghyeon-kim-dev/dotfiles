@@ -25,4 +25,9 @@ vim.keymap.set("n", "<leader>2", ":2ToggleTerm<CR>", { noremap = true, silent = 
 vim.keymap.set("n", "<leader>3", ":3ToggleTerm<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>4", ":4ToggleTerm<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>5", ":5ToggleTerm<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>cc", "<cmd>lua _claude_toggle()<CR>", { noremap = true, silent = true })
+vim.keymap.set(
+  "n",
+  "<leader>cc",
+  "<cmd>lua _claude_toggle()<CR>",
+  { noremap = true, silent = true }
+)
