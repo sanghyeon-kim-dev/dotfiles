@@ -105,9 +105,9 @@
               "zoxide"
               "ripgrep"
               "fd"
+              "fzf"
               "uv"
               "yazi"
-
               "tmux"
               "git-delta"
               "imagemagick"

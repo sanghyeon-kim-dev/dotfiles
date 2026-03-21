@@ -9,8 +9,10 @@ bindkey '^F' autosuggest-accept
 # aliases
 alias v=nvim
 alias z=zoxide
+alias y=yazi
 alias f=fzf
 alias c=claude --dangerously-skip-permissions
+alias nxu="sudo nix flake update && sudo darwin-rebuild switch --flake ~/.dotfiles#mbp"
 
 # tmux coding cockpit: nvim (top-left), claude (top-right), terminal (bottom)
 nic() {
@@ -45,3 +47,6 @@ export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# zoxide
+eval "$(zoxide init zsh)"
