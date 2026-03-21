@@ -130,17 +130,9 @@
       "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
       "src": "https://github.com/folke/todo-comments.nvim"
     },
-    "toggleterm.nvim": {
-      "rev": "9a88eae817ef395952e08650b3283726786fb5fb",
-      "src": "https://github.com/akinsho/toggleterm.nvim"
-    },
     "ts-comments.nvim": {
       "rev": "123a9fb12e7229342f807ec9e6de478b1102b041",
       "src": "https://github.com/folke/ts-comments.nvim"
-    },
-    "workspaces.nvim": {
-      "rev": "55a1eb6f5b72e07ee8333898254e113e927180ca",
-      "src": "https://github.com/natecraddock/workspaces.nvim"
     },
     "yanky.nvim": {
       "rev": "784188e0a7363e762e53140f39124d786aec0832",

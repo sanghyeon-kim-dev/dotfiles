@@ -79,22 +79,3 @@ end, { desc = "Open Yank History" })
 vim.keymap.set("n", "<C-t>", function()
   Snacks.explorer()
 end, { desc = "Toggle explorer" })
-vim.keymap.set("n", "<C-o>", function()
-  local items = {}
-  for _, ws in ipairs(require("workspaces").get()) do
-    table.insert(items, { text = ws.name, path = ws.path })
-  end
-  Snacks.picker({
-    title = "Workspaces",
-    items = items,
-    format = function(item)
-      return { { item.text } }
-    end,
-    confirm = function(picker, item)
-      picker:close()
-      if item then
-        require("workspaces").open(item.text)
-      end
-    end,
-  })
-end)
