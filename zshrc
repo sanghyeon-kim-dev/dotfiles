@@ -14,22 +14,29 @@ alias f=fzf
 alias c=claude --dangerously-skip-permissions
 alias nxu="sudo nix flake update && sudo darwin-rebuild switch --flake ~/.dotfiles#mbp"
 
-# tmux coding cockpit: nvim (top-left), claude (top-right), terminal (bottom)
+# Coding cockpit: neovim + claude + terminal in tmux
 nic() {
-  local session="${1:-$(basename "$PWD")}"
-  if tmux has-session -t "$session" 2>/dev/null; then
-    tmux attach -t "$session"
+  local raw_name="${1:-$(basename "$PWD")}"
+  local session_name="${raw_name#.}"
+  session_name="${session_name//./_}"
+
+  if [[ -n "$TMUX" ]]; then
+    echo "Already in a tmux session. Detach first or run from outside tmux."
+    return 1
+  fi
+
+  if tmux has-session -t "$session_name" 2>/dev/null; then
+    tmux attach-session -t "$session_name"
     return
   fi
-  tmux new-session -d -s "$session" -x "$(tput cols)" -y "$(tput lines)"
-  tmux split-window -h -t "$session"
-  tmux split-window -v -f -t "$session"
-  tmux resize-pane -t "$session:1.1" -x 85%
-  tmux resize-pane -t "$session:1.3" -y 10%
-  tmux send-keys -t "$session:1.1" 'nvim .' Enter
-  tmux send-keys -t "$session:1.2" 'claude' Enter
-  tmux select-pane -t "$session:1.3"
-  tmux attach -t "$session"
+
+  tmux new-session -d -s "$session_name" -c "$PWD" -x "$(tput cols)" -y "$(tput lines)"
+  tmux split-window -v -t "$session_name" -c "$PWD" -l 20%
+  tmux split-window -h -t "$session_name":1.1 -c "$PWD" -l 30%
+  tmux send-keys -t "$session_name":1.1 'nvim' C-m
+  tmux send-keys -t "$session_name":1.2 'c' C-m
+  tmux select-pane -t "$session_name":1.1
+  tmux attach-session -t "$session_name"
 }
 
 # fnm
