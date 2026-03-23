@@ -3,13 +3,13 @@ vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
-    javascript = { "prettierd" },
-    typescript = { "prettierd", "prettier", stop_after_first = true },
-    typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-    html = { "prettierd", "prettier", stop_after_first = true },
-    css = { "prettierd", "prettier", stop_after_first = true },
-    json = { "prettierd", "prettier", stop_after_first = true },
-    markdown = { "prettierd", "prettier", stop_after_first = true },
+    javascript = { "biome", "prettierd" },
+    typescript = { "biome", "prettierd", "prettier", stop_after_first = true },
+    typescriptreact = { "biome", "prettierd", "prettier", stop_after_first = true },
+    html = { "biome", "prettierd", "prettier", stop_after_first = true },
+    css = { "biome", "prettierd", "prettier", stop_after_first = true },
+    json = { "biome", "prettierd", "prettier", stop_after_first = true },
+    markdown = { "biome", "prettierd", "prettier", stop_after_first = true },
   },
   formatters = {
     stylua = {

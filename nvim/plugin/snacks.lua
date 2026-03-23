@@ -4,6 +4,7 @@ require("snacks").setup({
   indent = { enabled = true },
   explorer = {
     enabled = true,
+    hidden = true,
   },
   image = {
     enabled = true,
@@ -19,6 +20,8 @@ require("snacks").setup({
     sources = {
       files = {
         hidden = true,
+        ignored = true,
+        exclude = { "node_modules" },
         matcher = { fuzzy = false },
       },
     },
@@ -56,7 +59,7 @@ require("snacks").setup({
 
 -- Keymaps
 vim.keymap.set("n", "<C-p>", function()
-  Snacks.picker.files({ hidden = true })
+  Snacks.picker.files()
 end)
 vim.keymap.set("n", "<C-f>", function()
   Snacks.picker.lines()
