@@ -12,17 +12,8 @@ in
   home.homeDirectory = "/Users/sanghyeon";
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
-    nixpkgs-fmt
+    nixfmt-rfc-style
     nil # Nix LSP
-    # LSP servers
-    lua-language-server
-    typescript-language-server
-    vscode-langservers-extracted # html, css, json, eslint
-    tailwindcss-language-server
-    biome
-    # Formatters
-    stylua
-    prettierd
   ];
 
   xdg.configFile."karabiner/karabiner.json" = {

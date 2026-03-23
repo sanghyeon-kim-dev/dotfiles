@@ -111,6 +111,15 @@
               "tmux"
               "git-delta"
               "imagemagick"
+              # LSP servers & formatters
+              "lua-language-server"
+              "typescript-language-server"
+              "vscode-langservers-extracted"
+              "tailwindcss-language-server"
+              "biome"
+              "stylua"
+              "prettierd"
+              "tree-sitter"
             ];
 
             casks = [

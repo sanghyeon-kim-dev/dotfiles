@@ -3,6 +3,7 @@ vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
+    nix = { "nixfmt" },
     javascript = { "biome", "prettierd" },
     typescript = { "biome", "prettierd", "prettier", stop_after_first = true },
     typescriptreact = { "biome", "prettierd", "prettier", stop_after_first = true },
