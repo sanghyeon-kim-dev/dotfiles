@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("UIEnter", {
 })
 
 -- Leaders
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 vim.g.localleader = "\\"
 
 -- Options

@@ -12,6 +12,6 @@ vim.keymap.set({ "n", "x" }, "<C-x>", function()
   require("opencode").select()
 end, { desc = "Open opencode prompt menu" })
 
-vim.keymap.set({ "n", "t" }, "<C-.>", function()
+vim.keymap.set({ "n", "t" }, "<leader>.", function()
   require("opencode").toggle()
 end, { desc = "Toggle opencode terminal" })
