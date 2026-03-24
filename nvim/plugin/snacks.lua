@@ -2,6 +2,11 @@ vim.pack.add({ "https://github.com/folke/snacks.nvim" })
 
 require("snacks").setup({
   indent = { enabled = true },
+  terminal = {
+    win = {
+      position = "bottom",
+    },
+  },
   explorer = {
     enabled = true,
     hidden = true,
@@ -81,3 +86,9 @@ end, { desc = "Open Yank History" })
 vim.keymap.set("n", "<C-t>", function()
   Snacks.explorer()
 end, { desc = "Toggle explorer" })
+vim.keymap.set({ "n", "t" }, "<C-/>", function()
+  Snacks.terminal.toggle()
+end, { desc = "Toggle terminal" })
+vim.keymap.set({ "n", "t" }, "<C-_>", function()
+  Snacks.terminal.toggle()
+end, { desc = "Toggle terminal" })
