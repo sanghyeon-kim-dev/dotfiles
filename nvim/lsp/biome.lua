@@ -1,4 +1,4 @@
-local utils = require("config.lsp.utils")
+local utils = require("utils")
 
 ---@type vim.lsp.Config
 return {
