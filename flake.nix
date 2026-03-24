@@ -120,6 +120,7 @@
               "stylua"
               "prettierd"
               "tree-sitter"
+              "opencode"
             ];
 
             casks = [
