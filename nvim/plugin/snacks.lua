@@ -23,6 +23,11 @@ require("snacks").setup({
     layout = {
       preset = "vscode",
     },
+    actions = {
+      opencode_send = function(...)
+        return require("opencode").snacks_picker_send(...)
+      end,
+    },
     sources = {
       files = {
         hidden = true,
