@@ -41,10 +41,6 @@ in
     force = true;
   };
 
-  xdg.configFile."opencode" = {
-    source = create_symlink "${dotfiles}/opencode";
-    force = true;
-  };
 
   programs.zsh = {
     enable = true;

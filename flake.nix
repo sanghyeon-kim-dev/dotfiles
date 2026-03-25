@@ -27,14 +27,15 @@
   };
 
   outputs =
-    inputs@{ self
-    , nix-darwin
-    , nixpkgs
-    , home-manager
-    , nix-homebrew
-    , homebrew-core
-    , homebrew-cask
-    , homebrew-sdkman
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+      home-manager,
+      nix-homebrew,
+      homebrew-core,
+      homebrew-cask,
+      homebrew-sdkman,
     }:
     let
       configuration =
@@ -60,7 +61,6 @@
             NSGlobalDomain.ApplePressAndHoldEnabled = false;
             NSGlobalDomain."com.apple.sound.beep.volume" = 0.0;
             NSGlobalDomain.AppleInterfaceStyle = "Dark";
-
 
             finder.AppleShowAllFiles = true;
             finder.AppleShowAllExtensions = true;
@@ -119,8 +119,8 @@
               "biome"
               "stylua"
               "prettierd"
-              "tree-sitter"
-              "opencode"
+              "tree-sitter-cli"
+
             ];
 
             casks = [
