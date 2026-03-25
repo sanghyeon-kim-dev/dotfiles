@@ -15,7 +15,7 @@ alias c=claude --dangerously-skip-permissions
 alias nxu="sudo nix flake update && sudo darwin-rebuild switch --flake ~/.dotfiles#mbp"
 
 # Coding cockpit: neovim + claude + terminal in tmux
-nic() {
+tmx() {
   local raw_name="${1:-$(basename "$PWD")}"
   local session_name="${raw_name#.}"
   session_name="${session_name//./_}"
@@ -30,13 +30,7 @@ nic() {
     return
   fi
 
-  tmux new-session -d -s "$session_name" -c "$PWD" -x "$(tput cols)" -y "$(tput lines)"
-  tmux split-window -v -t "$session_name" -c "$PWD" -l 20%
-  tmux split-window -h -t "$session_name":1.1 -c "$PWD" -l 30%
-  tmux send-keys -t "$session_name":1.1 'nvim' C-m
-  tmux send-keys -t "$session_name":1.2 'c' C-m
-  tmux select-pane -t "$session_name":1.1
-  tmux attach-session -t "$session_name"
+  tmux new-session -s "$session_name" -c "$PWD" -x "$(tput cols)" -y "$(tput lines)"
 }
 
 # fnm
