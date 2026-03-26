@@ -51,3 +51,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# claude
+export PATH="$HOME/.local/bin:$PATH"
