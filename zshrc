@@ -7,7 +7,7 @@ export EDITOR="nvim"
 bindkey '^F' autosuggest-accept
 
 # aliases
-alias v=nvim
+alias v=nvim .
 alias z=zoxide
 alias y=yazi
 alias f=fzf

@@ -5,8 +5,6 @@ require("snacks").setup({
 
   explorer = {
     enabled = true,
-    hidden = true,
-    ignored = true,
   },
   image = {
     enabled = true,
@@ -22,7 +20,6 @@ require("snacks").setup({
 
     sources = {
       files = {
-        hidden = true,
         matcher = { fuzzy = false },
       },
     },
