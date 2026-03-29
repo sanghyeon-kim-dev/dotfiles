@@ -100,6 +100,7 @@
               "mas"
               "fnm"
               "rbenv"
+              "cocoapods"
               "sdkman-cli"
               "bat"
               "zoxide"
