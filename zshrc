@@ -8,8 +8,6 @@ bindkey '^F' autosuggest-accept
 
 # aliases
 alias v=nvim .
-alias z=zoxide
-alias y=yazi
 alias f=fzf
 alias c=claude --dangerously-skip-permissions
 alias nxu="sudo nix flake update && sudo darwin-rebuild switch --flake ~/.dotfiles#mbp"
@@ -31,6 +29,15 @@ tmx() {
   fi
 
   tmux new-session -s "$session_name" -c "$PWD" -x "$(tput cols)" -y "$(tput lines)"
+}
+
+# yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
 }
 
 # fnm
