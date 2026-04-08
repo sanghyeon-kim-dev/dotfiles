@@ -136,6 +136,8 @@
               "karabiner-elements"
               "docker-desktop"
               "logi-options+"
+              "figma"
+              "slack"
             ];
 
             masApps = {
