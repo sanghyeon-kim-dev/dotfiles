@@ -24,6 +24,10 @@
       url = "github:sdkman/homebrew-tap";
       flake = false;
     };
+    homebrew-anomalyco = {
+      url = "github:anomalyco/homebrew-tap";
+      flake = false;
+    };
   };
 
   outputs =
@@ -36,6 +40,7 @@
       homebrew-core,
       homebrew-cask,
       homebrew-sdkman,
+      homebrew-anomalyco,
     }:
     let
       configuration =
@@ -82,6 +87,7 @@
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
               "sdkman/homebrew-tap" = homebrew-sdkman;
+              "anomalyco/homebrew-tap" = homebrew-anomalyco;
             };
 
             mutableTaps = false;
@@ -96,6 +102,8 @@
             };
             taps = builtins.attrNames config.nix-homebrew.taps;
             brews = [
+              "anomalyco/tap/opencode"
+              "bun"
               "bob"
               "mas"
               "fnm"
