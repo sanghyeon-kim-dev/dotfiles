@@ -36,8 +36,13 @@ in
     force = true;
   };
 
-  xdg.configFile."opencode" = {
-    source = create_symlink "${dotfiles}/opencode";
+  xdg.configFile."opencode/opencode.json" = {
+    source = create_symlink "${dotfiles}/opencode/opencode.json";
+    force = true;
+  };
+
+  xdg.configFile."opencode/oh-my-openagent.jsonc" = {
+    source = create_symlink "${dotfiles}/opencode/oh-my-openagent.jsonc";
     force = true;
   };
 
